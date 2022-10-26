@@ -158,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Slider(
                                     value: height.toDouble(),
                                     max: 210,
-                                    min: 45,
+                                    min: 55,
                                     onChanged: (double value) {
                                       setState(() {
                                         height = value.toInt();
@@ -329,7 +329,8 @@ class _HomePageState extends State<HomePage> {
                     child: ElevatedButton(
                         onPressed: (() {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Result()));
+                              builder: (context) =>
+                                  Result(weight, height, age)));
                         }),
                         child: Text("Calculate")),
                   )),
