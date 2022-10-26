@@ -14,47 +14,81 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            Expanded(
-                flex: 3,
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: Container(
-                      color: Colors.amber,
-                    )),
-                    Expanded(
-                        child: Container(
-                      color: Colors.black,
-                    )),
-                  ],
-                )),
-            Expanded(
-                flex: 3,
-                child: Container(
-                  color: Colors.red,
-                )),
-            Expanded(
-                flex: 3,
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: Container(
-                      color: Colors.blueGrey,
-                    )),
-                    Expanded(
-                        child: Container(
-                      color: Colors.blue,
-                    )),
-                  ],
-                )),
-            Expanded(
-                flex: 1,
-                child: Container(
-                  color: Colors.tealAccent,
-                )),
-          ],
+        body: Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Expanded(
+                  flex: 3,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.amber,
+                        ),
+                      )),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                          child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.black,
+                        ),
+                      )),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                  flex: 3,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.red,
+                    ),
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                  flex: 3,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.blueGrey,
+                        ),
+                      )),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                          child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue),
+                      )),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: (() {}), child: Text("Calculate")),
+                  )),
+            ],
+          ),
         ),
       ),
     );
