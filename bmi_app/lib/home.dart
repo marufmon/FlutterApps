@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -28,6 +30,21 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.amber,
                         ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                onPressed: (() {}),
+                                icon: Icon(
+                                  Icons.male,
+                                  size: 70,
+                                )),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Text("Male"),
+                            )
+                          ],
+                        ),
                       )),
                       SizedBox(
                         width: 10,
@@ -36,7 +53,23 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.black,
+                          color: Colors.cyan,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                onPressed: (() {}),
+                                icon: Icon(
+                                  Icons.female,
+                                  size: 70,
+                                )),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Text("Femalale"),
+                            )
+                          ],
                         ),
                       )),
                     ],
@@ -65,6 +98,28 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.blueGrey,
                         ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Text("weight"),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                FloatingActionButton(
+                                  onPressed: (() {}),
+                                  child: Icon(Icons.remove),
+                                ),
+                                FloatingActionButton(
+                                  onPressed: (() {}),
+                                  child: Icon(Icons.add),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       )),
                       SizedBox(
                         width: 10,
@@ -74,6 +129,28 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.blue),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Text("Age"),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                FloatingActionButton(
+                                  onPressed: (() {}),
+                                  child: Icon(Icons.remove),
+                                ),
+                                FloatingActionButton(
+                                  onPressed: (() {}),
+                                  child: Icon(Icons.add),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       )),
                     ],
                   )),
@@ -87,6 +164,9 @@ class _HomePageState extends State<HomePage> {
                     child: ElevatedButton(
                         onPressed: (() {}), child: Text("Calculate")),
                   )),
+              SizedBox(
+                height: 10,
+              )
             ],
           ),
         ),
