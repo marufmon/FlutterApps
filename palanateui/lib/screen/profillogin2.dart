@@ -30,7 +30,7 @@ class _Longin9State extends State<Longin9> {
                     icon: Padding(
                       padding: const EdgeInsets.only(left: 0, bottom: 15),
                       child: Icon(
-                        Icons.arrow_back,
+                        Icons.arrow_back_ios,
                         size: 30,
                         color: Colors.white,
                       ),
