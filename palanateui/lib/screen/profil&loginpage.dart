@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:palanateui/screen/loginpage.dart';
 import 'package:palanateui/screen/profillogin2.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Login7 extends StatefulWidget {
   const Login7({super.key});
@@ -20,6 +23,17 @@ class _Login7State extends State<Login7> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  @override
+  XFile? _image;
+
+  Camera() async {
+    final ImagePicker _picker = ImagePicker();
+    _image = await _picker.pickImage(
+      source: ImageSource.gallery,
+    );
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,15 +65,29 @@ class _Login7State extends State<Login7> {
                       )),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 125, top: 25, bottom: 25),
+                  padding: EdgeInsets.only(left: 120, top: 25, bottom: 25),
                   child: CircleAvatar(
                     backgroundColor: Colors.grey,
-                    radius: 55,
-                    child: Icon(
-                      Icons.camera_enhance,
-                      size: 35,
-                      color: Colors.white,
-                    ),
+                    maxRadius: 55,
+                    //radius: 55,
+                    child: _image == null
+                        ? IconButton(
+                            onPressed: () {
+                              Camera();
+                            },
+                            icon: Icon(
+                              Icons.camera_alt_sharp,
+                              size: 30,
+                              color: Colors.white,
+                            ))
+                        : Container(
+                            height: double.infinity,
+                            width: MediaQuery.of(context).size.width * 1.0,
+                            child: ClipRRect(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(90)),
+                                child: Image.file(File(_image!.path))),
+                          ),
                   ),
                 ),
                 Padding(
