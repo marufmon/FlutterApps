@@ -42,7 +42,7 @@ class _Login6State extends State<Login6> {
                         padding: const EdgeInsets.only(left: 0, bottom: 15),
                         child: Icon(
                           Icons.arrow_back_ios,
-                          size: 30,
+                          size: 25,
                           color: Colors.white,
                         ),
                       )),

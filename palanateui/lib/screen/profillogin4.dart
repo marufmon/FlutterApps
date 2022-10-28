@@ -43,10 +43,62 @@ class _Login11State extends State<Login11> {
                         padding: const EdgeInsets.only(left: 0, bottom: 15),
                         child: Icon(
                           Icons.arrow_back_ios,
-                          size: 30,
+                          size: 25,
                           color: Colors.white,
                         ),
                       )),
+                  title: Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blueAccent,
+                          ),
+                          height: 7,
+                          width: 25,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.lightBlue,
+                          ),
+                          height: 7,
+                          width: 25,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.lightBlue,
+                          ),
+                          height: 7,
+                          width: 25,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.lightBlue,
+                          ),
+                          height: 7,
+                          width: 25,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(1),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white38,
+                          ),
+                          height: 7,
+                          width: 15,
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 10,

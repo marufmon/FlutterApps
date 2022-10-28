@@ -41,6 +41,40 @@ class Login2 extends StatelessWidget {
                       color: Colors.white),
                 ),
                 SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white38,
+                      ),
+                      height: 7,
+                      width: 25,
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.lightBlue,
+                      ),
+                      height: 7,
+                      width: 40,
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white38,
+                      ),
+                      height: 7,
+                      width: 25,
+                    ),
+                  ],
+                ),
+                SizedBox(
                   height: 32,
                 ),
                 CustomeButton(

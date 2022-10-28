@@ -52,24 +52,77 @@ class _Login7State extends State<Login7> {
               children: [
                 ListTile(
                   leading: IconButton(
-                      onPressed: (() {
-                        Navigator.of(context).pop();
-                      }),
-                      icon: Padding(
-                        padding: const EdgeInsets.only(left: 0, bottom: 15),
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          size: 30,
-                          color: Colors.white,
+                    onPressed: (() {
+                      Navigator.of(context).pop();
+                    }),
+                    icon: Padding(
+                      padding: const EdgeInsets.only(left: 0, bottom: 15),
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        size: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  title: Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blueAccent,
+                          ),
+                          height: 7,
+                          width: 25,
                         ),
-                      )),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white38,
+                          ),
+                          height: 7,
+                          width: 15,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white38,
+                          ),
+                          height: 7,
+                          width: 15,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white38,
+                          ),
+                          height: 7,
+                          width: 15,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(1),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white38,
+                          ),
+                          height: 7,
+                          width: 15,
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 Container(
                   padding: EdgeInsets.only(left: 120, top: 25, bottom: 25),
                   child: CircleAvatar(
                     backgroundColor: Colors.grey,
-                    maxRadius: 55,
-                    //radius: 55,
+                    // maxRadius: 55,
+                    radius: 55,
                     child: _image == null
                         ? IconButton(
                             onPressed: () {
@@ -80,14 +133,12 @@ class _Login7State extends State<Login7> {
                               size: 30,
                               color: Colors.white,
                             ))
-                        : Container(
-                            height: double.infinity,
-                            width: MediaQuery.of(context).size.width * 1.0,
-                            child: ClipRRect(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(90)),
-                                child: Image.file(File(_image!.path))),
-                          ),
+                        : ClipRRect(
+                            borderRadius: BorderRadius.circular(100),
+                            child: Container(
+                                height: double.infinity,
+                                width: double.infinity,
+                                child: Image.file(File(_image!.path)))),
                   ),
                 ),
                 Padding(
