@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:palanateui/screen/loginpage.dart';
+import 'package:palanateui/screen/profillogin3.dart';
 
 class Longin9 extends StatefulWidget {
   const Longin9({super.key});
@@ -40,7 +41,10 @@ class _Longin9State extends State<Longin9> {
                 padding: const EdgeInsets.all(15.0),
                 child: CustomeButton(
                   title: "Create your own teams",
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Login10()));
+                  },
                 ),
               ),
               SizedBox(
@@ -61,7 +65,10 @@ class _Longin9State extends State<Longin9> {
                 child: CustomeButton(
                   isBlue: true,
                   title: "Join team",
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Login10()));
+                  },
                 ),
               ),
             ],
