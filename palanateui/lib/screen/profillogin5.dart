@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:palanateui/nav_bar_demo/bottonstyledemo.dart';
 import 'package:palanateui/screen/loginpage.dart';
 
 class Login12 extends StatefulWidget {
@@ -161,7 +162,10 @@ class _Login12State extends State<Login12> {
                   child: CustomeButton(
                     title: "Continue",
                     onTap: () {
-                      if (_formKey.currentState!.validate()) {}
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => BottomBarDEmo()));
+                      }
                     },
                   ),
                 ),
