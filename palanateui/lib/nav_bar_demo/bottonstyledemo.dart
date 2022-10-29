@@ -27,7 +27,7 @@ class _BottomBarDEmoState extends State<BottomBarDEmo> {
 
   login1() {
     return showModalBottomSheet(
-        isDismissible: true,
+        isScrollControlled: true,
         context: context,
         builder: (context) => TeamInfoDemo());
   }
@@ -53,8 +53,8 @@ class _BottomBarDEmoState extends State<BottomBarDEmo> {
             color: Colors.white,
           ),
           onPressed: () {
-            login();
             login1();
+            login();
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

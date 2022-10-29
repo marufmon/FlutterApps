@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:palanateui/screen/griveveiwdemo.dart';
 import 'package:palanateui/screen/loginpage.dart';
 import 'package:palanateui/screen/teamsinfo.dart';
 import 'package:palanateui/weiged/const.dart';
@@ -64,7 +65,7 @@ class BottomSheetDemo extends StatelessWidget {
                   title: "Next",
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => TeamInfoDemo()));
+                        builder: (context) => GriveViewDemo()));
                   },
                 ),
               ),
