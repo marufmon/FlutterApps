@@ -3,6 +3,7 @@
 import 'package:day21/weiged/page1.dart';
 import 'package:day21/weiged/page2.dart';
 import 'package:day21/weiged/page3.dart';
+import 'package:day21/weiged/page4.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -19,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Row(
@@ -36,7 +38,12 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           Column(
-            children: [HomeAppBar(), BodyStylePart(), BootonStylePart()],
+            children: [
+              HomeAppBar(),
+              BodyStylePart(),
+              BootonStylePart(),
+              Page4()
+            ],
           ),
         ],
       ),

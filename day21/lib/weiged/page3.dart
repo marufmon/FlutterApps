@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors
+
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +18,10 @@ class _BootonStylePartState extends State<BootonStylePart> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15, right: 15),
+      padding: EdgeInsets.only(
+        left: 15,
+        right: 15,
+      ),
       width: double.infinity,
       height: 40,
       child: ListView.separated(
