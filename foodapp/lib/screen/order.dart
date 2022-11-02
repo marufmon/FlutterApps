@@ -15,9 +15,8 @@ class OrderPage extends StatefulWidget {
 
 class _OrderPageState extends State<OrderPage> {
   final maruf = ProductList.generatedProductList();
-  int prices = 10;
-  int quantity = 10;
-  int totalPrice = 0;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -81,9 +80,18 @@ class _OrderPageState extends State<OrderPage> {
                                                         color: Colors.orange,
                                                         onPressed: (() {
                                                           setState(() {
-                                                            if (prices > 0) {
-                                                              prices++;
-                                                            }
+                                                            maruf[contex]
+                                                                .prices++;
+
+                                                            maruf[contex]
+                                                                .quantity++;
+
+                                                            maruf[contex]
+                                                                .totalPrice = maruf[
+                                                                        contex]
+                                                                    .prices *
+                                                                maruf[contex]
+                                                                    .quantity;
                                                           });
                                                         }),
                                                         child: Icon(
@@ -119,9 +127,25 @@ class _OrderPageState extends State<OrderPage> {
                                                         color: Colors.orange,
                                                         onPressed: (() {
                                                           setState(() {
-                                                            if (prices > 0) {
-                                                              prices--;
-                                                            }
+                                                            maruf[contex]
+                                                                .prices--;
+
+                                                            maruf[contex]
+                                                                .quantity--;
+
+                                                            maruf[contex]
+                                                                .totalPrice = maruf[
+                                                                        contex]
+                                                                    .prices *
+                                                                maruf[contex]
+                                                                    .quantity;
+
+                                                            maruf[contex]
+                                                                .totalPrice = maruf[
+                                                                        contex]
+                                                                    .prices *
+                                                                maruf[contex]
+                                                                    .quantity;
                                                           });
                                                         }),
                                                         child: Icon(
@@ -161,17 +185,41 @@ class _OrderPageState extends State<OrderPage> {
                   Padding(
                     padding: const EdgeInsets.all(30.0),
                     child: Text(
-                      "Delivery prices............20",
+                      "Delivery prices............60",
                       style:
                           GoogleFonts.roboto(fontSize: 20, color: Colors.white),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(30.0),
-                    child: Text(
-                      "Total prices.................30",
-                      style:
-                          GoogleFonts.roboto(fontSize: 20, color: Colors.white),
+                    child: Row(
+                      children: [
+                        Text(
+                          "\$Total prices...........",
+                          style: GoogleFonts.roboto(
+                              fontSize: 20, color: Colors.white),
+                        ),
+                        Text(
+                          "${maruf[contex].totalPrice}",
+                          style: GoogleFonts.roboto(
+                              fontSize: 20, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: MaterialButton(
+                      height: 55,
+                      minWidth: 130,
+                      color: Colors.teal,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      onPressed: (() {}),
+                      child: Text(
+                        "check",
+                        style: GoogleFonts.roboto(
+                            fontSize: 20, color: Colors.white),
+                      ),
                     ),
                   )
                 ],
