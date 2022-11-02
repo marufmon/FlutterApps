@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
                     style: GoogleFonts.roboto(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                 ),
                 SizedBox(
@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
                   style: GoogleFonts.roboto(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white54),
+                      color: Colors.black),
                 ),
                 SizedBox(
                   height: 10,
@@ -53,14 +53,17 @@ class Home extends StatelessWidget {
                   style: GoogleFonts.roboto(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white54),
+                      color: Colors.black),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.8,
-                  height: MediaQuery.of(context).size.height * 0.075,
+                  height: MediaQuery.of(context).size.height * 0.06,
                   margin: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * .40),
+                      bottom: 5, top: MediaQuery.of(context).size.height * .30),
                   child: MaterialButton(
+                      height: 60,
+                      minWidth: 200,
+                      color: Colors.white38,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25)),
                       onPressed: (() {
@@ -72,7 +75,7 @@ class Home extends StatelessWidget {
                         style: GoogleFonts.roboto(
                             fontSize: 14, fontWeight: FontWeight.w700),
                       )),
-                )
+                ),
               ],
             ),
           ),
