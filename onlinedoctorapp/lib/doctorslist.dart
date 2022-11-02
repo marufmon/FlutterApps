@@ -1,10 +1,5 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
-
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:onlinedoctorapp/model/tarbardemolist.dart';
 
 class DoctorList extends StatefulWidget {
