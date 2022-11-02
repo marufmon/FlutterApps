@@ -112,11 +112,13 @@ class _DetailFoodListState extends State<DetailFoodList> {
                     style:
                         GoogleFonts.roboto(fontSize: 20, color: Colors.black),
                   ),
-                  Text(
-                    "See all",
-                    style: GoogleFonts.roboto(
-                        fontSize: 16, color: Colors.orangeAccent),
-                  ),
+                  TextButton(
+                      onPressed: (() {}),
+                      child: Text(
+                        "see all",
+                        style: GoogleFonts.roboto(
+                            fontSize: 18, color: Colors.orange),
+                      ))
                 ],
               ),
               SizedBox(
@@ -134,11 +136,13 @@ class _DetailFoodListState extends State<DetailFoodList> {
                     style:
                         GoogleFonts.roboto(fontSize: 20, color: Colors.black),
                   ),
-                  Text(
-                    "See all",
-                    style: GoogleFonts.roboto(
-                        fontSize: 16, color: Colors.orangeAccent),
-                  ),
+                  TextButton(
+                      onPressed: (() {}),
+                      child: Text(
+                        "see all",
+                        style: GoogleFonts.roboto(
+                            fontSize: 18, color: Colors.orange),
+                      ))
                 ],
               ),
               SizedBox(

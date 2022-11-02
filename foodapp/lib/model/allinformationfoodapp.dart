@@ -28,7 +28,7 @@ class ProductList {
           "images/b1.jpg", 0, 1, 10),
       ProductList("5.0", "20 min", "\$60", "Dhaka caffe", "Chiken Fry",
           "images/c1.webp", 0, 1, 25),
-      ProductList("5.0", "30 min", "\$5", "Tasty treat", "valila Cake",
+      ProductList("5.0", "30 min", "\$5", "Tasty treat", "Valila Cake",
           "images/cake2.jpg", 0, 1, 55),
     ];
   }

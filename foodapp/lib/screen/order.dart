@@ -82,7 +82,7 @@ class _OrderPageState extends State<OrderPage> {
                                                         onPressed: (() {
                                                           setState(() {
                                                             if (prices > 0) {
-                                                              quantity--;
+                                                              prices++;
                                                             }
                                                           });
                                                         }),
@@ -120,7 +120,7 @@ class _OrderPageState extends State<OrderPage> {
                                                         onPressed: (() {
                                                           setState(() {
                                                             if (prices > 0) {
-                                                              quantity++;
+                                                              prices--;
                                                             }
                                                           });
                                                         }),
