@@ -13,17 +13,8 @@ class ProductList {
       this.img, this.totalPrice, this.quantity, this.prices);
   static List<ProductList> generatedProductList() {
     return [
-      ProductList(
-        "5.0",
-        "15 min",
-        "\$50",
-        "Domiano",
-        "Pizza",
-        "images/p1.jpg",
-        0,
-        1,
-        5,
-      ),
+      ProductList("5.0", "15 min", "\$50", "Domiano", "Pizza", "images/p1.jpg",
+          0, 1, 5),
       ProductList("5.0", " 7 min", "\$70", "Pizza Hut", "Berger",
           "images/b1.jpg", 0, 1, 10),
       ProductList("5.0", "20 min", "\$60", "Dhaka caffe", "Chiken Fry",
