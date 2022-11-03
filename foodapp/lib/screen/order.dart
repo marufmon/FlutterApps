@@ -224,7 +224,13 @@ class _OrderPageState extends State<OrderPage> {
                       color: Colors.teal,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              AlertDialog(content: Text('${totalCost + 60}')),
+                        );
+                      }),
                       child: Text(
                         "check",
                         style: GoogleFonts.roboto(
