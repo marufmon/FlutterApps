@@ -26,7 +26,6 @@ class _OrderPageState extends State<OrderPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getToatalCost();
     super.initState();
   }
