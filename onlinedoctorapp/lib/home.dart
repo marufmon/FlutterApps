@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 241, 232, 232),
       body: Container(
-        margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+        margin: EdgeInsets.only(top: 50, left: 20, right: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Icon(
                     Icons.apps,
-                    size: 30,
+                    size: 35,
                     color: Colors.black,
                   ),
                   Column(
@@ -68,8 +68,10 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.network(
-                              "https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/288020853_1394142407675714_3692136361548968487_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFgtWCvRQKtLXDpShSFKcwVV9Zi_wMRwmlX1mL_AxHCace06YQgg0E1zm7r4gNDmxdW6zIC0v4cAEYWKA6kSWYr&_nc_ohc=m3ljkFl40BAAX_VDGTT&_nc_ht=scontent.fdac31-1.fna&oh=00_AfAtM0Jiqo3viXMbSZ-Ib0j4YtC8Gf4NEOeHoAHy2RiQTg&oe=63644469"),
+                          child: Image.asset(
+                            "images/d1.jpg",
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
@@ -86,8 +88,11 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.black,
                     ),
                   ),
-                  trailing:
-                      ElevatedButton(onPressed: (() {}), child: Text("Skip")),
+                  trailing: ElevatedButton(
+                      onPressed: (() {
+                        Navigator.of(context).pop();
+                      }),
+                      child: Text("Skip")),
                 ),
               ),
               Container(
@@ -158,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: EdgeInsets.only(top: 20, bottom: 20),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
                     color: Colors.white),
