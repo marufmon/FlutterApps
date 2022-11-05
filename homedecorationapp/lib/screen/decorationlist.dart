@@ -42,7 +42,7 @@ class _HomeDecontionListState extends State<HomeDecontionList> {
             ),
             Container(
               margin: EdgeInsets.all(20),
-              height: 150,
+              height: 165,
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),

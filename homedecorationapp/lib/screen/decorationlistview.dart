@@ -21,41 +21,48 @@ class _DEcorationViewState extends State<DEcorationView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.only(left: 10, right: 10, top: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                Container(
-                  margin:
-                      EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 10),
-                  height: 280,
-                  width: double.infinity,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      "images/de11.jpg",
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Positioned(
-                    top: 30,
-                    left: 15,
-                    child: IconButton(
-                        onPressed: (() {
-                          Navigator.of(context).pop();
-                        }),
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          size: 25,
-                          color: Colors.white,
-                        ))),
-              ],
+            Container(
+              height: 260,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => Stack(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: 30, left: 10, right: 20, bottom: 10),
+                            width: 320,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.asset(
+                                decoration[index].image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                              top: 30,
+                              left: 15,
+                              child: IconButton(
+                                  onPressed: (() {
+                                    Navigator.of(context).pop();
+                                  }),
+                                  icon: Icon(
+                                    Icons.arrow_back_ios,
+                                    size: 25,
+                                    color: Colors.white,
+                                  ))),
+                        ],
+                      ),
+                  separatorBuilder: (_, index) => SizedBox(width: 5),
+                  itemCount: decoration.length),
             ),
             Container(
-              margin: EdgeInsets.only(top: 15, left: 25),
-              height: 80,
+              padding: EdgeInsets.all(20),
+              height: 120,
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (contex, index) => Container(
@@ -149,7 +156,7 @@ class _DEcorationViewState extends State<DEcorationView> {
                   itemCount: decoration.length),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 30),
+              padding: const EdgeInsets.only(top: 40, left: 20),
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),

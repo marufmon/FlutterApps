@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:homedecorationapp/model/datalist.dart';
@@ -16,6 +18,7 @@ class _GRiveItemState extends State<GRiveItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(15),
       height: 380,
       child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -26,9 +29,13 @@ class _GRiveItemState extends State<GRiveItem> {
             return Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.all(7),
+                  margin: EdgeInsets.only(
+                    left: 10,
+                    bottom: 10,
+                    right: 10,
+                  ),
                   height: 210,
-                  width: 190,
+                  width: 150,
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
