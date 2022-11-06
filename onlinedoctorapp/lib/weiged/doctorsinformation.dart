@@ -87,7 +87,9 @@ class _DoctorInfoState extends State<DoctorInfo> {
                           Text(
                             maruf[contex].star,
                             style: GoogleFonts.roboto(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green),
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 75),
