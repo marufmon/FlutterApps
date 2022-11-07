@@ -21,7 +21,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
         body: Column(
           children: [
             Container(
-              height: 390,
+              height: 700,
               width: double.infinity,
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
