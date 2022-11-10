@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names
+
 const String st_tableContact = "st_tbl_contact";
 const String st_tableContactColId = " st_id";
 const String st_tableContactColName = "st_name";
@@ -26,7 +28,7 @@ class StudentModel {
 
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{
-      //st_tableContactColId:st_id,
+      st_tableContactColId: st_id,
       st_tableContactColName: st_name,
       st_tableContactColPhone: phone,
       st_tableContactColAddress: address,
