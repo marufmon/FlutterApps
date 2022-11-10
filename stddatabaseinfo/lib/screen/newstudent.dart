@@ -14,7 +14,7 @@ class NewStudent extends StatefulWidget {
 
 class _NewStudentState extends State<NewStudent> {
   final nameController = TextEditingController();
-  final phineController = TextEditingController();
+  final phoneController = TextEditingController();
   final addressController = TextEditingController();
 
   var formKey = GlobalKey<FormState>();
@@ -66,7 +66,7 @@ class _NewStudentState extends State<NewStudent> {
               height: 15,
             ),
             TextFormField(
-              controller: nameController,
+              controller: phoneController,
               decoration: InputDecoration(
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
@@ -190,7 +190,7 @@ class _NewStudentState extends State<NewStudent> {
                         ? Image.network(
                             "https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/288020853_1394142407675714_3692136361548968487_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFgtWCvRQKtLXDpShSFKcwVV9Zi_wMRwmlX1mL_AxHCace06YQgg0E1zm7r4gNDmxdW6zIC0v4cAEYWKA6kSWYr&_nc_ohc=1DvzduHI3C8AX-hEqQ6&_nc_ht=scontent.fdac31-1.fna&oh=00_AfDZF2sezEKa3CiuSoObkHRW8eZfFU1Cr_F1JdSkWX1O9g&oe=63721C29",
                             height: 200,
-                            width: 220,
+                            width: double.infinity,
                             fit: BoxFit.cover,
                           )
                         : Image.file(
@@ -203,7 +203,7 @@ class _NewStudentState extends State<NewStudent> {
                   height: 15,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ElevatedButton(
                         onPressed: () {
@@ -232,17 +232,20 @@ class _NewStudentState extends State<NewStudent> {
                   ],
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 40,
                 ),
-                ElevatedButton(
-                    onPressed: () {},
+                MaterialButton(
+                    height: 45,
+                    minWidth: 280,
+                    color: Colors.grey,
+                    onPressed: (() {}),
                     child: Text(
                       "Save all data",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w800,
-                          fontSize: 18),
-                    )),
+                          fontSize: 16),
+                    ))
               ],
             ),
           ],
