@@ -15,15 +15,15 @@ create table $st_tableContact(
 )''';
 
   static Future<Database> openDb() async {
-    final Path = await getDatabasesPath();
-    final dbPath = join(Path, "st_contact.db");
+    final path = await getDatabasesPath();
+    final dbPath = join(path, "st_contact.db");
     return openDatabase(dbPath, version: 1, onCreate: (db, version) {
       db.execute(createStTableContact);
     });
   }
 
   static Future<int> insertStContact(StudentModel studentModel) async {
-    final st_db = await openDb();
-    return st_db.insert(st_tableContact, studentModel.toMap());
+    final stdb = await openDb();
+    return stdb.insert(st_tableContact, studentModel.toMap());
   }
 }
