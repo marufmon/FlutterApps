@@ -196,7 +196,7 @@ class _NewStudentState extends State<NewStudent> {
                         : Image.file(
                             File(images!),
                             height: 200,
-                            width: 200,
+                            width: double.infinity,
                             fit: BoxFit.cover,
                           )),
                 SizedBox(
@@ -205,7 +205,8 @@ class _NewStudentState extends State<NewStudent> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ElevatedButton(
+                    MaterialButton(
+                        color: Colors.blueGrey,
                         onPressed: () {
                           _imageSource = ImageSource.camera;
                           _getImage();
@@ -217,7 +218,8 @@ class _NewStudentState extends State<NewStudent> {
                               fontWeight: FontWeight.w800,
                               fontSize: 16),
                         )),
-                    ElevatedButton(
+                    MaterialButton(
+                        color: Colors.blueGrey,
                         onPressed: () {
                           _imageSource = ImageSource.gallery;
                           _getImage();
@@ -228,16 +230,16 @@ class _NewStudentState extends State<NewStudent> {
                               color: Colors.black,
                               fontWeight: FontWeight.w800,
                               fontSize: 16),
-                        )),
+                        ))
                   ],
                 ),
                 SizedBox(
                   height: 40,
                 ),
                 MaterialButton(
-                    height: 45,
+                    height: 50,
                     minWidth: 280,
-                    color: Colors.grey,
+                    color: Colors.black38,
                     onPressed: (() {}),
                     child: Text(
                       "Save all data",
