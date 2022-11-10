@@ -26,19 +26,16 @@ class _NewStudentState extends State<NewStudent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 241, 247, 170),
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           "Student",
           style: TextStyle(
-              letterSpacing: 3.0,
-              color: Color.fromARGB(255, 21, 1, 34),
-              fontWeight: FontWeight.w800,
-              fontSize: 25),
+              color: Colors.black, fontWeight: FontWeight.w800, fontSize: 25),
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(25.0),
         child: Form(
             child: ListView(
           children: [
@@ -46,11 +43,11 @@ class _NewStudentState extends State<NewStudent> {
               controller: nameController,
               decoration: InputDecoration(
                 border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
                 prefixIcon: Icon(Icons.person),
                 labelText: "Name",
                 labelStyle: TextStyle(
-                    color: Color.fromARGB(255, 21, 1, 34),
+                    color: Colors.black,
                     fontWeight: FontWeight.w800,
                     fontSize: 15),
               ),
@@ -71,14 +68,12 @@ class _NewStudentState extends State<NewStudent> {
             TextFormField(
               controller: nameController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(30))),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
                 prefixIcon: Icon(Icons.phone),
                 labelText: "Phone",
                 labelStyle: TextStyle(
-                    color: Color.fromARGB(255, 21, 1, 34),
+                    color: Colors.black,
                     fontWeight: FontWeight.w800,
                     fontSize: 15),
               ),
@@ -100,11 +95,11 @@ class _NewStudentState extends State<NewStudent> {
               controller: addressController,
               decoration: InputDecoration(
                 border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
                 prefixIcon: Icon(Icons.home_filled),
                 labelText: "Address",
                 labelStyle: TextStyle(
-                    color: Color.fromARGB(255, 21, 1, 34),
+                    color: Colors.black,
                     fontWeight: FontWeight.w800,
                     fontSize: 15),
               ),
@@ -132,14 +127,14 @@ class _NewStudentState extends State<NewStudent> {
                       child: Text(
                         "Select your date of Birth",
                         style: TextStyle(
-                            color: Color.fromARGB(255, 6, 89, 245),
+                            color: Colors.black38,
                             fontWeight: FontWeight.w800,
                             fontSize: 15),
                       )),
                   Text(
                     dob == null ? "No Birth day selected" : dob!,
                     style: TextStyle(
-                        color: Color.fromARGB(255, 21, 1, 34),
+                        color: Colors.black,
                         fontWeight: FontWeight.w800,
                         fontSize: 15),
                   ),
@@ -163,7 +158,7 @@ class _NewStudentState extends State<NewStudent> {
                   Text(
                     "Male",
                     style: TextStyle(
-                        color: Color.fromARGB(255, 223, 4, 124),
+                        color: Colors.black,
                         fontWeight: FontWeight.w800,
                         fontSize: 20),
                   ),
@@ -178,7 +173,7 @@ class _NewStudentState extends State<NewStudent> {
                   Text(
                     "Female",
                     style: TextStyle(
-                        color: Color.fromARGB(255, 223, 4, 124),
+                        color: Colors.black,
                         fontWeight: FontWeight.w800,
                         fontSize: 20),
                   ),
@@ -218,9 +213,9 @@ class _NewStudentState extends State<NewStudent> {
                         child: Text(
                           "Camera",
                           style: TextStyle(
-                              color: Color.fromARGB(255, 241, 238, 4),
+                              color: Colors.black,
                               fontWeight: FontWeight.w800,
-                              fontSize: 20),
+                              fontSize: 16),
                         )),
                     ElevatedButton(
                         onPressed: () {
@@ -230,9 +225,9 @@ class _NewStudentState extends State<NewStudent> {
                         child: Text(
                           "Gallery",
                           style: TextStyle(
-                              color: Color.fromARGB(255, 247, 222, 4),
+                              color: Colors.black,
                               fontWeight: FontWeight.w800,
-                              fontSize: 20),
+                              fontSize: 16),
                         )),
                   ],
                 ),
@@ -244,9 +239,9 @@ class _NewStudentState extends State<NewStudent> {
                     child: Text(
                       "Save all data",
                       style: TextStyle(
-                          color: Color.fromARGB(255, 8, 8, 8),
+                          color: Colors.black,
                           fontWeight: FontWeight.w800,
-                          fontSize: 20),
+                          fontSize: 18),
                     )),
               ],
             ),
