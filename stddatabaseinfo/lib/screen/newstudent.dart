@@ -4,9 +4,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:stddatabaseinfo/model/stddatalist.dart';
+import 'package:stddatabaseinfo/provider/contrastprovider.dart';
+import 'package:provider/provider.dart';
 
 class NewStudent extends StatefulWidget {
-  const NewStudent({super.key});
+  static const String routeName = '/';
 
   @override
   State<NewStudent> createState() => _NewStudentState();
@@ -22,6 +25,7 @@ class _NewStudentState extends State<NewStudent> {
   String? dob;
   String? images;
   ImageSource _imageSource = ImageSource.camera;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -240,13 +244,13 @@ class _NewStudentState extends State<NewStudent> {
                     height: 50,
                     minWidth: 280,
                     color: Colors.black38,
-                    onPressed: (() {}),
+                    onPressed: saveData,
                     child: Text(
-                      "Save all data",
+                      "Save data",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w800,
-                          fontSize: 16),
+                          fontSize: 18),
                     ))
               ],
             ),
@@ -256,11 +260,31 @@ class _NewStudentState extends State<NewStudent> {
     );
   }
 
+  saveData() async {
+    if (formKey.currentState!.validate()) {
+      final contact = StudentModel(
+        st_name: nameController.text,
+        phone: phoneController.text,
+        address: addressController.text,
+        dob: dob,
+        gender: gender,
+        image: images,
+      );
+
+      final status =
+          await Provider.of<StudentContactProvider>(context, listen: false)
+              .insertContact(contact);
+      if (status) {
+        Navigator.pop(context);
+      } else {}
+    }
+  }
+
   void _selectedDate() async {
     final selectedDate = await showDatePicker(
         context: context,
         initialDate: DateTime.now(),
-        firstDate: DateTime(1950),
+        firstDate: DateTime(2000),
         lastDate: DateTime.now());
     if (selectedDate != null) {
       setState(() {
