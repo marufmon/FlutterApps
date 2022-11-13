@@ -1,0 +1,489 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "bmi_app",
+            "cwd": "bmi_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "bmi_app (profile mode)",
+            "cwd": "bmi_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "bmi_app (release mode)",
+            "cwd": "bmi_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "day12",
+            "cwd": "day12",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "day12 (profile mode)",
+            "cwd": "day12",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "day12 (release mode)",
+            "cwd": "day12",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "day16",
+            "cwd": "day16",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "day16 (profile mode)",
+            "cwd": "day16",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "day16 (release mode)",
+            "cwd": "day16",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "day18",
+            "cwd": "day18",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "day18 (profile mode)",
+            "cwd": "day18",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "day18 (release mode)",
+            "cwd": "day18",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "day19",
+            "cwd": "day19",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "day19 (profile mode)",
+            "cwd": "day19",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "day19 (release mode)",
+            "cwd": "day19",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "day21",
+            "cwd": "day21",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "day21 (profile mode)",
+            "cwd": "day21",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "day21 (release mode)",
+            "cwd": "day21",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "day_17",
+            "cwd": "day_17",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "day_17 (profile mode)",
+            "cwd": "day_17",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "day_17 (release mode)",
+            "cwd": "day_17",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "day_8",
+            "cwd": "day_8",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "day_8 (profile mode)",
+            "cwd": "day_8",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "day_8 (release mode)",
+            "cwd": "day_8",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "design_app",
+            "cwd": "design_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "design_app (profile mode)",
+            "cwd": "design_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "design_app (release mode)",
+            "cwd": "design_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "exam2ui",
+            "cwd": "exam2ui",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "exam2ui (profile mode)",
+            "cwd": "exam2ui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "exam2ui (release mode)",
+            "cwd": "exam2ui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "finess_app",
+            "cwd": "finess_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "finess_app (profile mode)",
+            "cwd": "finess_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "finess_app (release mode)",
+            "cwd": "finess_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "foodapp",
+            "cwd": "foodapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "foodapp (profile mode)",
+            "cwd": "foodapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "foodapp (release mode)",
+            "cwd": "foodapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "homedecorationapp",
+            "cwd": "homedecorationapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "homedecorationapp (profile mode)",
+            "cwd": "homedecorationapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "homedecorationapp (release mode)",
+            "cwd": "homedecorationapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "homework",
+            "cwd": "homework",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "homework (profile mode)",
+            "cwd": "homework",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "homework (release mode)",
+            "cwd": "homework",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "homework2",
+            "cwd": "homework2",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "homework2 (profile mode)",
+            "cwd": "homework2",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "homework2 (release mode)",
+            "cwd": "homework2",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "homework4",
+            "cwd": "homework4",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "homework4 (profile mode)",
+            "cwd": "homework4",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "homework4 (release mode)",
+            "cwd": "homework4",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "homework5",
+            "cwd": "homework5",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "homework5 (profile mode)",
+            "cwd": "homework5",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "homework5 (release mode)",
+            "cwd": "homework5",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "loveapp",
+            "cwd": "loveapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "loveapp (profile mode)",
+            "cwd": "loveapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "loveapp (release mode)",
+            "cwd": "loveapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "my_app",
+            "cwd": "my_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "my_app (profile mode)",
+            "cwd": "my_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "my_app (release mode)",
+            "cwd": "my_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "onlinedoctorapp",
+            "cwd": "onlinedoctorapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "onlinedoctorapp (profile mode)",
+            "cwd": "onlinedoctorapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "onlinedoctorapp (release mode)",
+            "cwd": "onlinedoctorapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "pageview",
+            "cwd": "pageview",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "pageview (profile mode)",
+            "cwd": "pageview",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "pageview (release mode)",
+            "cwd": "pageview",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "palanateui",
+            "cwd": "palanateui",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "palanateui (profile mode)",
+            "cwd": "palanateui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "palanateui (release mode)",
+            "cwd": "palanateui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "productlistapp",
+            "cwd": "productlistapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "productlistapp (profile mode)",
+            "cwd": "productlistapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "productlistapp (release mode)",
+            "cwd": "productlistapp",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "stddatabaseinfo",
+            "cwd": "stddatabaseinfo",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "stddatabaseinfo (profile mode)",
+            "cwd": "stddatabaseinfo",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "stddatabaseinfo (release mode)",
+            "cwd": "stddatabaseinfo",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
