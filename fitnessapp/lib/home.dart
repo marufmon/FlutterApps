@@ -63,21 +63,21 @@ class _HomePageState extends State<HomePage> {
       opacity: 0.5,
       progressIndicator: CircularProgressIndicator(),
       child: Scaffold(
-        body: ListView.builder(
-            shrinkWrap: true,
-            itemCount: allData.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
+        body: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: allData.length,
+              itemBuilder: (context, index) {
+                return Text(
                   "${allData[index].title}",
                   style: GoogleFonts.roboto(
                       fontSize: 16,
                       color: Colors.black,
-                      fontWeight: FontWeight.w500),
-                ),
-              );
-            }),
+                      fontWeight: FontWeight.w400),
+                );
+              }),
+        ),
       ),
     );
   }
