@@ -7,6 +7,8 @@ import 'package:intl/intl.dart';
 import 'package:stddatabaseinfo/model/stddatalist.dart';
 import 'package:stddatabaseinfo/provider/contrastprovider.dart';
 import 'package:provider/provider.dart';
+import 'package:stddatabaseinfo/screen/studendetails.dart';
+import 'package:stddatabaseinfo/screen/studentlist.dart';
 
 class NewStudent extends StatefulWidget {
   static const String routeName = '/';
@@ -275,7 +277,11 @@ class _NewStudentState extends State<NewStudent> {
           await Provider.of<StudentContactProvider>(context, listen: false)
               .insertContact(contact);
       if (status) {
-        Navigator.pop(context);
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => StudentDetails(),
+            ));
       } else {}
     }
   }
