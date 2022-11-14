@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'dart:convert';
-import 'package:fitnessapi_app/fitnessexerciesdetails.dart';
+import 'package:fitnessapi_app/thubnailpage.dart';
 import 'package:fitnessapi_app/model/datalist.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             id: i["id"],
             title: i["title"],
             gif: i["gif"],
-            thumbnil: i["thumbnail"],
+            thumbnail: i["thumbnail"],
             seconds: i["seconds"]);
         setState(() {
           allData.add(exerciseModel);
@@ -56,7 +56,8 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) => InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SecondPage()));
+                          builder: (context) =>
+                              ThumbnailPage(exerciseModel: allData[index])));
                     },
                     child: Stack(
                       children: [
@@ -68,9 +69,9 @@ class _HomePageState extends State<HomePage> {
                             child: CachedNetworkImage(
                               width: double.infinity,
                               fit: BoxFit.cover,
-                              imageUrl: allData[index].thumbnil.toString(),
+                              imageUrl: allData[index].thumbnail.toString(),
                               placeholder: (context, url) => Image.network(
-                                  "https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/288020853_1394142407675714_3692136361548968487_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFgtWCvRQKtLXDpShSFKcwVV9Zi_wMRwmlX1mL_AxHCace06YQgg0E1zm7r4gNDmxdW6zIC0v4cAEYWKA6kSWYr&_nc_ohc=-5opNCygNGgAX8YLe_U&_nc_ht=scontent.fdac31-1.fna&oh=00_AfBmmP_3kNcYwrNVLF0eqq02GnCM5xf7Wdi4dFEbglKtyw&oe=63780AE9"),
+                                  "https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/298267792_1432047977218490_2040140291139212763_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEk6TV8008OTBxZqqiZLrqXvZHW9p1MI469kdb2nUwjjloubnKBuuBy_QJ1KJzVkGmudMbJD7KXR61cRDWdKdzu&_nc_ohc=DC2BkGNBDosAX8DOuc9&_nc_ht=scontent.fdac31-1.fna&oh=00_AfBy3FmNdIdQeu37kxjQKjvoWHyL7zbwMBs8Vn5b6WBqFw&oe=6377F3C6"),
                               errorWidget: (context, url, error) =>
                                   Icon(Icons.error),
                             ),
@@ -88,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               allData[index].title.toString(),
                               style: GoogleFonts.roboto(
-                                  fontSize: 20, color: Colors.white70),
+                                  fontSize: 20, color: Colors.white),
                             ),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
