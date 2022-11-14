@@ -39,6 +39,7 @@ dependencies:
   http: ^0.13.5
   google_fonts: ^3.0.1
   cached_network_image: ^3.2.2
+  sleek_circular_slider: ^2.0.1
 
 
 dev_dependencies:
