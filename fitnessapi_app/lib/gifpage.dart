@@ -21,7 +21,7 @@ class _GifPageState extends State<GifPage> {
 
   @override
   void initState() {
-    timer = Timer.periodic(Duration(seconds: 2), (timer) {
+    timer = Timer.periodic(Duration(seconds: 3), (timer) {
       if (timer.tick == widget.seconds) {
         timer.cancel();
         Future.delayed(Duration(seconds: 1), () {
