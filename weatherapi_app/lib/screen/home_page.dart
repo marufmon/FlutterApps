@@ -77,6 +77,12 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(
+                    "https://www.popsci.com/uploads/2020/08/10/X7V35SIG6NGSDJPZDUBTVWQAGM.jpg?auto=webp&width=1440&height=1080"),
+                fit: BoxFit.cover),
+          ),
           padding: EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,48 +94,34 @@ class _HomePageState extends State<HomePage> {
                     Text(
                       "${Jiffy(DateTime.now()).format("MMM do yy,h:mm,a")}",
                       style: GoogleFonts.roboto(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
                           color: Colors.black),
                     ),
                     Text("${weatherMap!["name"]}",
                         style: GoogleFonts.roboto(
-                            fontSize: 19,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
                             color: Colors.black))
                   ],
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 60,
               ),
               Center(
                 child: Column(
                   children: [
-                    Container(
-                      height: 100,
-                      width: 120,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: Image.network(
-                          "https://static01.nyt.com/images/2014/12/11/technology/personaltech/11machin-illo/11machin-illo-superJumbo-v3.jpg",
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
                     Text("${weatherMap!["main"]["temp"]}°",
                         style: GoogleFonts.roboto(
-                            fontSize: 45,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 55,
+                            fontWeight: FontWeight.w600,
                             color: Colors.black)),
                   ],
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 70,
               ),
               Align(
                 alignment: Alignment.topLeft,
@@ -138,19 +130,19 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text("Feels Like ${weatherMap!["main"]["feels_like"]}°",
                         style: GoogleFonts.roboto(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w600,
                             color: Colors.black)),
                     Text("${weatherMap!["weather"][0]["description"]}",
                         style: GoogleFonts.roboto(
                             fontSize: 18,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                             color: Colors.black))
                   ],
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 60,
               ),
               Align(
                 alignment: Alignment.center,
@@ -159,8 +151,8 @@ class _HomePageState extends State<HomePage> {
                     Text(
                         "Humidity ${weatherMap!["main"]["humidity"]},Pressure ${weatherMap!["main"]["pressure"]}",
                         style: GoogleFonts.roboto(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w600,
                             color: Colors.black)),
                     SizedBox(
                       height: 5,
@@ -168,8 +160,8 @@ class _HomePageState extends State<HomePage> {
                     Text(
                         "Sunrise- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunrise"])).format("h:mm,a")},Sunset- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunset"])).format("h:mm,a")}",
                         style: GoogleFonts.roboto(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
                             color: Colors.black)),
                   ],
                 ),
@@ -178,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                 height: 40,
               ),
               SizedBox(
-                height: 250,
+                height: 240,
                 child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (contex, index) => Container(
