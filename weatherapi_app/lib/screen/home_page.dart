@@ -187,8 +187,8 @@ class _HomePageState extends State<HomePage> {
                                 Text(
                                     "${Jiffy(forecastMap!["list"][index]["dt_txt"]).format("EEE  h:mm")}",
                                     style: GoogleFonts.roboto(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
                                         color: Colors.black)),
                                 Image.network(
                                     "https://openweatherMap.org/img/wn/${forecastMap!["list"][index]["weather"][0]["icon"]}@2x.png"),
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                                     "${forecastMap!["list"][index]["weather"][0]["description"]}",
                                     style: GoogleFonts.roboto(
                                         fontSize: 18,
-                                        fontWeight: FontWeight.w400,
+                                        fontWeight: FontWeight.w500,
                                         color: Colors.black)),
                               ],
                             ),
