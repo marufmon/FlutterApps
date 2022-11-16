@@ -76,146 +76,149 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-                    "https://www.popsci.com/uploads/2020/08/10/X7V35SIG6NGSDJPZDUBTVWQAGM.jpg?auto=webp&width=1440&height=1080"),
-                fit: BoxFit.cover),
-          ),
-          padding: EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Align(
-                alignment: Alignment.topRight,
-                child: Column(
-                  children: [
-                    Text(
-                      "${Jiffy(DateTime.now()).format("MMM do yy,h:mm,a")}",
-                      style: GoogleFonts.roboto(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black),
-                    ),
-                    Text("${weatherMap!["name"]}",
-                        style: GoogleFonts.roboto(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black))
-                  ],
+        body: weatherMap == null
+            ? Center(child: CircularProgressIndicator())
+            : Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          "https://www.popsci.com/uploads/2020/08/10/X7V35SIG6NGSDJPZDUBTVWQAGM.jpg?auto=webp&width=1440&height=1080"),
+                      fit: BoxFit.cover),
                 ),
-              ),
-              SizedBox(
-                height: 60,
-              ),
-              Center(
-                child: Column(
-                  children: [
-                    Text("${weatherMap!["main"]["temp"]}°",
-                        style: GoogleFonts.roboto(
-                            fontSize: 55,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black)),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 70,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
+                padding: EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Feels Like ${weatherMap!["main"]["feels_like"]}°",
-                        style: GoogleFonts.roboto(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black)),
-                    Text("${weatherMap!["weather"][0]["description"]}",
-                        style: GoogleFonts.roboto(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black))
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 60,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: Column(
-                  children: [
-                    Text(
-                        "Humidity ${weatherMap!["main"]["humidity"]},Pressure ${weatherMap!["main"]["pressure"]}",
-                        style: GoogleFonts.roboto(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black)),
-                    SizedBox(
-                      height: 5,
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Column(
+                        children: [
+                          Text(
+                            "${Jiffy(DateTime.now()).format("MMM do yy,h:mm,a")}",
+                            style: GoogleFonts.roboto(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
+                          Text("${weatherMap!["name"]}",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black))
+                        ],
+                      ),
                     ),
-                    Text(
-                        "Sunrise- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunrise"])).format("h:mm,a")},Sunset- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunset"])).format("h:mm,a")}",
-                        style: GoogleFonts.roboto(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black)),
+                    SizedBox(
+                      height: 60,
+                    ),
+                    Center(
+                      child: Column(
+                        children: [
+                          Text("${weatherMap!["main"]["temp"]}°",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 55,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black)),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 70,
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                              "Feels Like ${weatherMap!["main"]["feels_like"]}°",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black)),
+                          Text("${weatherMap!["weather"][0]["description"]}",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black))
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 60,
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: [
+                          Text(
+                              "Humidity ${weatherMap!["main"]["humidity"]},Pressure ${weatherMap!["main"]["pressure"]}",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black)),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                              "Sunrise- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunrise"])).format("h:mm,a")},Sunset- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunset"])).format("h:mm,a")}",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black)),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    SizedBox(
+                      height: 240,
+                      child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (contex, index) => Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color.fromARGB(255, 149, 171, 189),
+                                ),
+                                height: 200,
+                                width: 160,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                          "${Jiffy(forecastMap!["list"][index]["dt_txt"]).format("EEE  h:mm")}",
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black)),
+                                      Image.network(
+                                          "https://openweatherMap.org/img/wn/${forecastMap!["list"][index]["weather"][0]["icon"]}@2x.png"),
+                                      Text(
+                                          "${forecastMap!["list"][index]["main"]["temp_min"]}°/${forecastMap!["list"][index]["main"]["temp_max"]}°",
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.black)),
+                                      Text(
+                                          "${forecastMap!["list"][index]["weather"][0]["description"]}",
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black)),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                          separatorBuilder: (_, index) => SizedBox(
+                                width: 10,
+                              ),
+                          itemCount: forecastMap!.length),
+                    )
                   ],
                 ),
               ),
-              SizedBox(
-                height: 40,
-              ),
-              SizedBox(
-                height: 240,
-                child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (contex, index) => Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(255, 149, 171, 189),
-                          ),
-                          height: 200,
-                          width: 160,
-                          child: Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: Column(
-                              children: [
-                                Text(
-                                    "${Jiffy(forecastMap!["list"][index]["dt_txt"]).format("EEE  h:mm")}",
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.black)),
-                                Image.network(
-                                    "https://openweatherMap.org/img/wn/${forecastMap!["list"][index]["weather"][0]["icon"]}@2x.png"),
-                                Text(
-                                    "${forecastMap!["list"][index]["main"]["temp_min"]}/${forecastMap!["list"][index]["main"]["temp_max"]}",
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.black)),
-                                Text(
-                                    "${forecastMap!["list"][index]["weather"][0]["description"]}",
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.black)),
-                              ],
-                            ),
-                          ),
-                        ),
-                    separatorBuilder: (_, index) => SizedBox(
-                          width: 10,
-                        ),
-                    itemCount: forecastMap!.length),
-              )
-            ],
-          ),
-        ),
       ),
     );
   }
