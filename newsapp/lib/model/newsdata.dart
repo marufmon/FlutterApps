@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_this, unnecessary_new, prefer_collection_literals
-
 class NewsModel {
   String? status;
   int? totalResults;
@@ -78,7 +76,7 @@ class Articles {
 }
 
 class Source {
-  Null? id;
+  String? id;
   String? name;
 
   Source({this.id, this.name});
