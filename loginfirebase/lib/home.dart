@@ -45,9 +45,11 @@ class _HomePageState extends State<HomePage> {
                             builder: (context) => const SingUp()));
                       }),
                       child: Text(
-                        "START",
+                        "Start",
                         style: GoogleFonts.roboto(
-                            fontSize: 14, fontWeight: FontWeight.w700),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black),
                       )),
                 ),
               ],

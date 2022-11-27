@@ -1,6 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loginfirebase/db/dbhelper.dart';
@@ -30,13 +28,18 @@ class _SingUpState extends State<SingUp> {
             child: Column(
               children: [
                 TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "email is empty";
-                    }
-                    if (!value.contains("@")) {
-                      return "email feild requred";
-                    }
+                  validator: (String? value) {
+                    String pattern =
+                        r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+                        r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+                        r"{0,253}[a-zA-Z0-9])?)*$";
+                    RegExp regex = RegExp(pattern);
+                    if (value == null ||
+                        value.isEmpty ||
+                        !regex.hasMatch(value))
+                      return 'Enter a valid email address';
+                    else
+                      return null;
                   },
                   controller: emailController,
                   decoration: InputDecoration(
@@ -48,7 +51,7 @@ class _SingUpState extends State<SingUp> {
                       filled: true,
                       prefixIcon: Icon(
                         Icons.email,
-                        color: Colors.blue,
+                        color: Colors.black,
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -65,10 +68,10 @@ class _SingUpState extends State<SingUp> {
                     if (value!.isEmpty) {
                       return "password is empty";
                     }
-                    if (value.length < 3) {
+                    if (value.length < 5) {
                       return "password is too short";
                     }
-                    if (value.length > 8) {
+                    if (value.length > 16) {
                       return "password is too Long";
                     }
                   },
@@ -86,7 +89,7 @@ class _SingUpState extends State<SingUp> {
                     filled: true,
                     prefixIcon: Icon(
                       Icons.lock,
-                      color: Colors.blue,
+                      color: Colors.black,
                     ),
                     suffixIcon: IconButton(
                         onPressed: () {
@@ -106,7 +109,30 @@ class _SingUpState extends State<SingUp> {
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 25,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                        onPressed: (() {}),
+                        child: Text(
+                          "forget password ",
+                          style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black38),
+                        )),
+                    ElevatedButton(
+                        onPressed: (() {}),
+                        child: Text(
+                          "Sign in",
+                          style: GoogleFonts.roboto(fontSize: 14),
+                        ))
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 20, right: 20),
