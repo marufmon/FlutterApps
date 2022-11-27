@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "128065987512",
+    "project_id": "loginpage-cb292",
+    "storage_bucket": "loginpage-cb292.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128065987512:android:5d90199f6c9d940129654d",
+        "android_client_info": {
+          "package_name": "com.example.loginfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128065987512-ce4lip809eljc1oq71l47lm8iqfs29bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ-M_HDV4o3zEaPh0QRaPQoagnmwb-neM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128065987512-ce4lip809eljc1oq71l47lm8iqfs29bq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
