@@ -2,6 +2,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:resisterfirebase/blog/popularity.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
@@ -12,14 +14,14 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsPageState extends State<DetailsPage> {
   final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('users').snapshots();
+      FirebaseFirestore.instance.collection('blog').snapshots();
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
       stream: _usersStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text('Something Error');
+          return Text('Something error');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -35,7 +37,7 @@ class _DetailsPageState extends State<DetailsPage> {
             return Container(
               height: 350,
               child: Card(
-                elevation: 5,
+                elevation: 7,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
                 child: Row(
@@ -58,20 +60,45 @@ class _DetailsPageState extends State<DetailsPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              child: Text(data["title"]),
+                              padding:
+                                  EdgeInsets.only(top: 10, left: 20, right: 10),
+                              child: Text(
+                                data["title"],
+                                style: GoogleFonts.lobster(
+                                    fontSize: 22, fontWeight: FontWeight.bold),
+                              ),
                             ),
                             SizedBox(
                               height: 10.0,
                             ),
                             Container(
-                              child: Text(data["description"]),
+                              padding:
+                                  EdgeInsets.only(top: 10, left: 20, right: 10),
+                              child: Text(
+                                data["description"],
+                                style: GoogleFonts.roboto(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
                             ),
-                            MaterialButton(
-                              color: Colors.amber,
-                              height: 55,
-                              minWidth: 180,
-                              onPressed: (() {}),
-                              child: Text("veiw details"),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Center(
+                              child: MaterialButton(
+                                color: Colors.amber,
+                                height: 45,
+                                minWidth: 100,
+                                onPressed: (() {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => PopularityPage()));
+                                }),
+                                child: Text(
+                                  "veiw details",
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
                             )
                           ],
                         ))

@@ -18,21 +18,22 @@ class _HomePageState extends State<HomePage> {
   int indexPage = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: myPages[indexPage],
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        items: <Widget>[
-          Icon(Icons.add, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-        ],
-        onTap: (index) {
-          setState(() {
-            indexPage = index;
-          });
-        },
-      ),
+    return SafeArea(
+      child: Scaffold(
+          bottomNavigationBar: CurvedNavigationBar(
+            backgroundColor: Colors.blueAccent,
+            items: <Widget>[
+              Icon(Icons.add, size: 30),
+              Icon(Icons.list, size: 30),
+              Icon(Icons.compare_arrows, size: 30),
+            ],
+            onTap: (index) {
+              setState(() {
+                indexPage = index;
+              });
+            },
+          ),
+          body: myPages[indexPage]),
     );
   }
 }

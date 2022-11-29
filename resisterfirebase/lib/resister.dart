@@ -26,6 +26,10 @@ class _ResistePageState extends State<ResistePage> {
       "age": ageController.text,
       "address": addressController.text,
     }));
+    nameController.clear();
+    phoneController.clear();
+    ageController.clear();
+    addressController.clear();
   }
 
   @override

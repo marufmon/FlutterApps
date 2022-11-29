@@ -1,6 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class GalleryPage extends StatefulWidget {
   const GalleryPage({super.key});
@@ -12,6 +12,6 @@ class GalleryPage extends StatefulWidget {
 class _GalleryPageState extends State<GalleryPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return SafeArea(child: Scaffold());
   }
 }
