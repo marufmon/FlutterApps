@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers, await_only_futures
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:resisterfirebase/blog/details.dart';
 import 'package:resisterfirebase/home.dart';
 
@@ -36,6 +37,7 @@ class _ResistePageState extends State<ResistePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         resizeToAvoidBottomInset: false,
         body: Form(
           key: _formKey,
@@ -62,7 +64,7 @@ class _ResistePageState extends State<ResistePage> {
                       labelText: "Enter your name",
                       hintStyle: TextStyle(color: Colors.black),
                       labelStyle: TextStyle(color: Colors.black),
-                      fillColor: Color.fromARGB(183, 158, 158, 158),
+                      fillColor: Colors.white,
                       filled: true,
                       prefixIcon: Icon(
                         Icons.person,
@@ -94,7 +96,7 @@ class _ResistePageState extends State<ResistePage> {
                       labelText: "Enter your phone number",
                       hintStyle: TextStyle(color: Colors.black),
                       labelStyle: TextStyle(color: Colors.black),
-                      fillColor: Color.fromARGB(183, 158, 158, 158),
+                      fillColor: Colors.white,
                       filled: true,
                       prefixIcon: Icon(
                         Icons.call,
@@ -122,11 +124,11 @@ class _ResistePageState extends State<ResistePage> {
                   },
                   controller: ageController,
                   decoration: InputDecoration(
-                      hintText: "your age",
-                      labelText: "your age",
+                      hintText: "Your age",
+                      labelText: "Your age",
                       hintStyle: TextStyle(color: Colors.black),
                       labelStyle: TextStyle(color: Colors.black),
-                      fillColor: Color.fromARGB(183, 158, 158, 158),
+                      fillColor: Colors.white,
                       filled: true,
                       prefixIcon: Icon(
                         Icons.calendar_today,
@@ -154,11 +156,11 @@ class _ResistePageState extends State<ResistePage> {
                   },
                   controller: addressController,
                   decoration: InputDecoration(
-                      hintText: "your address",
-                      labelText: "your address",
+                      hintText: "Your address",
+                      labelText: "Your address",
                       hintStyle: TextStyle(color: Colors.black),
                       labelStyle: TextStyle(color: Colors.black),
-                      fillColor: Color.fromARGB(183, 158, 158, 158),
+                      fillColor: Colors.white,
                       filled: true,
                       prefixIcon: Icon(
                         Icons.home,
@@ -178,16 +180,20 @@ class _ResistePageState extends State<ResistePage> {
                   margin: EdgeInsets.only(left: 20, right: 20),
                   height: MediaQuery.of(context).size.height * 0.06,
                   width: MediaQuery.of(context).size.width * 0.8,
-                  child: ElevatedButton(
+                  child: MaterialButton(
+                    color: Colors.grey,
+                    height: 55,
+                    minWidth: 170,
                     onPressed: (() {
                       addData();
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => HomePage()));
-
-                      if (_formKey.currentState!.validate()) {}
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => HomePage()));
+                      }
                     }),
                     child: Text(
                       "Resister",
+                      style: GoogleFonts.roboto(fontSize: 18),
                     ),
                   ),
                 ),

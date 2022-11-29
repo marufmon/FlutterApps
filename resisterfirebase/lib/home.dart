@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:resisterfirebase/blog/details.dart';
 import 'package:resisterfirebase/blog/gellay.dart';
@@ -21,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
           bottomNavigationBar: CurvedNavigationBar(
-            backgroundColor: Colors.blueAccent,
+            backgroundColor: Colors.black,
             items: <Widget>[
               Icon(Icons.add, size: 30),
               Icon(Icons.list, size: 30),

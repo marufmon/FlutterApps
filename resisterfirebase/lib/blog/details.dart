@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, unused_local_variable
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,7 +34,7 @@ class _DetailsPageState extends State<DetailsPage> {
             Map<String, dynamic> data =
                 document.data()! as Map<String, dynamic>;
             return Container(
-              height: 350,
+              height: 270,
               child: Card(
                 elevation: 7,
                 shape: RoundedRectangleBorder(
@@ -86,16 +85,16 @@ class _DetailsPageState extends State<DetailsPage> {
                             Center(
                               child: MaterialButton(
                                 color: Colors.amber,
-                                height: 45,
-                                minWidth: 100,
+                                height: 40,
+                                minWidth: 80,
                                 onPressed: (() {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => PopularityPage()));
+                                  customDialog(data['img'], data['title'],
+                                      data['description']);
                                 }),
                                 child: Text(
-                                  "veiw details",
+                                  "Veiw details",
                                   style: GoogleFonts.roboto(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -110,5 +109,53 @@ class _DetailsPageState extends State<DetailsPage> {
         );
       },
     );
+  }
+
+  customDialog(String img, String title, String description) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            child: Container(
+              height: 200,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.network(
+                        img,
+                        height: 200,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        title,
+                        style: GoogleFonts.roboto(
+                            fontSize: 14, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        description,
+                        style: GoogleFonts.roboto(
+                            fontSize: 14, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
   }
 }
