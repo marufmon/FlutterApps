@@ -19,11 +19,13 @@ class _DetailsPageState extends State<DetailsPage> {
       stream: _usersStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text('Something went wrong');
+          return Text('Something Error');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return Center(
+            child: CircularProgressIndicator(),
+          );
         }
 
         return ListView(
@@ -44,7 +46,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.network(
-                              data['img'],
+                              data["img"],
                               height: MediaQuery.of(context).size.height,
                               fit: BoxFit.cover,
                             ),
@@ -56,20 +58,20 @@ class _DetailsPageState extends State<DetailsPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              child: Text(data['title']),
+                              child: Text(data["title"]),
                             ),
                             SizedBox(
                               height: 10.0,
                             ),
                             Container(
-                              child: Text(data['description']),
+                              child: Text(data["description"]),
                             ),
                             MaterialButton(
                               color: Colors.amber,
                               height: 55,
                               minWidth: 180,
                               onPressed: (() {}),
-                              child: Text("Start"),
+                              child: Text("veiw details"),
                             )
                           ],
                         ))

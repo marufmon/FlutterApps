@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers, await_only_futures
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:resisterfirebase/blog/details.dart';
+import 'package:resisterfirebase/home.dart';
 
 class ResistePage extends StatefulWidget {
   const ResistePage({super.key});
@@ -175,6 +177,8 @@ class _ResistePageState extends State<ResistePage> {
                   child: ElevatedButton(
                     onPressed: (() {
                       addData();
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()));
 
                       if (_formKey.currentState!.validate()) {}
                     }),
