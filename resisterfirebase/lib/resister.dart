@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
+// ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers, await_only_futures
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -61,7 +60,7 @@ class _ResistePageState extends State<ResistePage> {
                       filled: true,
                       prefixIcon: Icon(
                         Icons.person,
-                        color: Colors.green,
+                        color: Colors.black,
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -93,7 +92,7 @@ class _ResistePageState extends State<ResistePage> {
                       filled: true,
                       prefixIcon: Icon(
                         Icons.call,
-                        color: Colors.green,
+                        color: Colors.black,
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -125,7 +124,7 @@ class _ResistePageState extends State<ResistePage> {
                       filled: true,
                       prefixIcon: Icon(
                         Icons.calendar_today,
-                        color: Colors.green,
+                        color: Colors.black,
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -156,8 +155,8 @@ class _ResistePageState extends State<ResistePage> {
                       fillColor: Color.fromARGB(183, 158, 158, 158),
                       filled: true,
                       prefixIcon: Icon(
-                        Icons.text_fields,
-                        color: Colors.green,
+                        Icons.home,
+                        color: Colors.black,
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),

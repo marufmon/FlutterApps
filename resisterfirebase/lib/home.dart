@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:async';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:resisterfirebase/resister.dart';
+import 'package:resisterfirebase/blog/details.dart';
+import 'package:resisterfirebase/blog/gellay.dart';
+import 'package:resisterfirebase/blog/popularity.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,21 +14,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    Timer(
-        Duration(milliseconds: 100),
-        () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => ResistePage())));
-
-    super.initState();
-  }
-
+  final myPages = [DetailsPage(), PopularityPage(), GalleryPage()];
+  int indexPage = 0;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+    return Scaffold(
+      body: myPages[indexPage],
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.blueAccent,
+        items: <Widget>[
+          Icon(Icons.add, size: 30),
+          Icon(Icons.list, size: 30),
+          Icon(Icons.compare_arrows, size: 30),
+        ],
+        onTap: (index) {
+          setState(() {
+            indexPage = index;
+          });
+        },
       ),
     );
   }
