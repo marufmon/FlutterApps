@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428877493692",
+    "project_id": "stdmanagement-83aac",
+    "storage_bucket": "stdmanagement-83aac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428877493692:android:871435b92af8b68fb3a7b9",
+        "android_client_info": {
+          "package_name": "com.example.studentmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428877493692-v5k3uor7utltv6t1mah7t7mts0vdabvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-KdMp9iOVGz3IbJp9UTEKBhj8sDTtP2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428877493692-v5k3uor7utltv6t1mah7t7mts0vdabvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
