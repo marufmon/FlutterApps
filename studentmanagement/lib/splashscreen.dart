@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:studentmanagement/course/viewcoursename.dart';
-import 'package:studentmanagement/course/addcoursename.dart';
+import 'package:studentmanagement/course/addcourse.dart';
+import 'package:studentmanagement/course/veiwcourse.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     Timer(
         Duration(seconds: 4),
         () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => AddCourseName())));
+            .push(MaterialPageRoute(builder: (context) => ViewCourseName())));
 
     super.initState();
   }

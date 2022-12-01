@@ -2,7 +2,7 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:studentmanagement/course/addcoursename.dart';
+import 'package:studentmanagement/course/veiwcourse.dart';
 import 'package:studentmanagement/splashscreen.dart';
 
 void main() async {
