@@ -1,23 +1,40 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_import, avoid_print
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stdmanagement/course/addcoursefee.dart';
+import 'package:stdmanagement/course/updatecoursefee.dart';
 
-
-class ViewCourseName extends StatefulWidget {
-  const ViewCourseName({super.key});
+class ViewCourseFee extends StatefulWidget {
+  const ViewCourseFee({super.key});
 
   @override
-  State<ViewCourseName> createState() => _ViewCourseNameState();
+  State<ViewCourseFee> createState() => _ViewCourseFeeState();
 }
 
-class _ViewCourseNameState extends State<ViewCourseName> {
+class _ViewCourseFeeState extends State<ViewCourseFee> {
   final Stream<QuerySnapshot> _usersStream =
       FirebaseFirestore.instance.collection('courses').snapshots();
 
-  deleteData(selectedData) {
+  addCourse() {
+    showModalBottomSheet(
+        isDismissible: false,
+        isScrollControlled: true,
+        context: context,
+        builder: (context) => AddCourseFee());
+  }
+
+  updateCourse(documentId, courseName, courseFee, img) {
+    showModalBottomSheet(
+        isDismissible: false,
+        isScrollControlled: true,
+        context: context,
+        builder: (context) =>
+            UpdateCourseFee(documentId, courseName, courseFee, img));
+  }
+
+  Future<void> deleteData(selectedData) {
     return FirebaseFirestore.instance
         .collection('courses')
         .doc(selectedData)
@@ -31,11 +48,7 @@ class _ViewCourseNameState extends State<ViewCourseName> {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            showModalBottomSheet(
-                isDismissible: false,
-                isScrollControlled: true,
-                context: context,
-                builder: (context) => AddCourseName());
+            addCourse();
           },
           child: Icon(
             Icons.add,
@@ -95,21 +108,27 @@ class _ViewCourseNameState extends State<ViewCourseName> {
                               ),
                             ),
                             Positioned(
+                              right: 2,
+                              top: 2,
                               child: Container(
                                 child: Row(
                                   children: [
                                     MaterialButton(
                                       height: 45,
                                       minWidth: 80,
-                                      onPressed: (() {}),
+                                      onPressed: (() {
+                                        updateCourse(
+                                            document.id,
+                                            data['course_name'],
+                                            data['course_fee'],
+                                            data['img']);
+                                        deleteData(document.id);
+                                      }),
                                       child: Icon(
                                         Icons.edit,
                                         size: 25,
                                         color: Colors.blue,
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
                                     ),
                                     MaterialButton(
                                       height: 45,

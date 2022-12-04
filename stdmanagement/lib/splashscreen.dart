@@ -14,9 +14,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(
-        Duration(seconds: 4),
+        Duration(seconds: 3),
         () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => ViewCourseName())));
+            .push(MaterialPageRoute(builder: (context) => ViewCourseFee())));
 
     super.initState();
   }
