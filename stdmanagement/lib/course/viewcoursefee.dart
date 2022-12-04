@@ -25,7 +25,7 @@ class _ViewCourseFeeState extends State<ViewCourseFee> {
         builder: (context) => AddCourseFee());
   }
 
-  updateCourse(documentId, courseName, courseFee, img) {
+   updateCourse(documentId, courseName, courseFee, img) {
     showModalBottomSheet(
         isDismissible: false,
         isScrollControlled: true,
