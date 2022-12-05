@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loginfirebase/db/dbhelper.dart';
+import 'package:loginfirebase/pages/detailspage.dart';
 
 class SingUp extends StatefulWidget {
   const SingUp({super.key});
@@ -109,30 +110,7 @@ class _SingUpState extends State<SingUp> {
                   ),
                 ),
                 SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                        onPressed: (() {}),
-                        child: Text(
-                          "forget password ",
-                          style: GoogleFonts.roboto(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black38),
-                        )),
-                    ElevatedButton(
-                        onPressed: (() {}),
-                        child: Text(
-                          "Sign in",
-                          style: GoogleFonts.roboto(fontSize: 14),
-                        ))
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
+                  height: 75,
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 20, right: 20),
@@ -143,7 +121,11 @@ class _SingUpState extends State<SingUp> {
                       FireBaseAuthiontacation().autont(
                           emailAddress: emailController.text,
                           password: passwordController.text);
-                      if (_formKey.currentState!.validate()) {}
+
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => DetailsPage()));
+                      }
                     }),
                     child: Text(
                       "Sign up",
