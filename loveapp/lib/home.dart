@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:loveapp/page2.dart';
+import 'package:loveapp/model/data.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,6 +18,34 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController name1Controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey();
+
+  String link =
+      "https://love-calculator.p.rapidapi.com/getPercentage?sname=sname&fname=fname";
+  List<LoveCal> allData = [];
+  late LoveCal loveCal;
+  bool? isLoading;
+  fetchData() async {
+    var response = await http.get(Uri.parse(link));
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body)["result"];
+      for (var i in data) {
+        loveCal = LoveCal(
+            fname: i["fname"],
+            sname: i["sname"],
+            result: i["result"],
+            percentange: i["percentage"]);
+        setState(() {
+          allData.add(loveCal);
+        });
+      }
+    }
+  }
+
+  @override
+  void initState() {
+    fetchData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,8 +151,25 @@ class _HomePageState extends State<HomePage> {
                 child: ElevatedButton(
                     onPressed: (() {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Page2()));
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                              content: Container(
+                            padding: EdgeInsets.all(10.0),
+                            height: 150,
+                            width: 150,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.favorite,
+                                  size: 55,
+                                  color: Colors.red,
+                                )
+                              ],
+                            ),
+                          )),
+                        );
                       }
                     }),
                     child: const Text("check")),
