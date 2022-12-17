@@ -1,7 +1,6 @@
 // ignore_for_file: unused_element, prefer_typing_uninitialized_variables, prefer_const_constructors, unused_local_variable, non_constant_identifier_names, unnecessary_string_interpolations, prefer_const_literals_to_create_immutables
 
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -76,15 +75,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: weatherMap == null
             ? Center(child: CircularProgressIndicator())
             : Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          "https://www.popsci.com/uploads/2020/08/10/X7V35SIG6NGSDJPZDUBTVWQAGM.jpg?auto=webp&width=1440&height=1080"),
-                      fit: BoxFit.cover),
-                ),
                 padding: EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,18 +92,31 @@ class _HomePageState extends State<HomePage> {
                             style: GoogleFonts.roboto(
                                 fontSize: 22,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.black),
+                                color: Colors.white),
                           ),
                           Text("${weatherMap!["name"]}",
                               style: GoogleFonts.roboto(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.black))
+                                  color: Colors.white))
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 60,
+                      height: 30,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(8.0),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      child: Center(
+                        child: Image.network(
+                          "https://cdn-icons-png.flaticon.com/512/1163/1163661.png",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
                     ),
                     Center(
                       child: Column(
@@ -118,12 +125,12 @@ class _HomePageState extends State<HomePage> {
                               style: GoogleFonts.roboto(
                                   fontSize: 55,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.black)),
+                                  color: Colors.white)),
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 70,
+                      height: 50,
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -135,17 +142,17 @@ class _HomePageState extends State<HomePage> {
                               style: GoogleFonts.roboto(
                                   fontSize: 22,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.black)),
+                                  color: Colors.white)),
                           Text("${weatherMap!["weather"][0]["description"]}",
                               style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.black))
+                                  color: Colors.white))
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 60,
+                      height: 50,
                     ),
                     Align(
                       alignment: Alignment.center,
@@ -156,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                               style: GoogleFonts.roboto(
                                   fontSize: 22,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.black)),
+                                  color: Colors.white)),
                           SizedBox(
                             height: 5,
                           ),
@@ -165,22 +172,23 @@ class _HomePageState extends State<HomePage> {
                               style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.black)),
+                                  color: Colors.white)),
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 30,
                     ),
                     SizedBox(
-                      height: 240,
+                      height: 200,
                       child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (contex, index) => Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(255, 149, 171, 189),
-                                ),
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: index % 2 == 0
+                                        ? Colors.tealAccent
+                                        : Colors.blue.shade200),
                                 height: 200,
                                 width: 160,
                                 child: Padding(
@@ -192,7 +200,7 @@ class _HomePageState extends State<HomePage> {
                                           style: GoogleFonts.roboto(
                                               fontSize: 20,
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.black)),
+                                              color: Colors.white)),
                                       Image.network(
                                           "https://openweatherMap.org/img/wn/${forecastMap!["list"][index]["weather"][0]["icon"]}@2x.png"),
                                       Text(
@@ -200,13 +208,13 @@ class _HomePageState extends State<HomePage> {
                                           style: GoogleFonts.roboto(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w400,
-                                              color: Colors.black)),
+                                              color: Colors.white)),
                                       Text(
                                           "${forecastMap!["list"][index]["weather"][0]["description"]}",
                                           style: GoogleFonts.roboto(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.black)),
+                                              color: Colors.white)),
                                     ],
                                   ),
                                 ),
