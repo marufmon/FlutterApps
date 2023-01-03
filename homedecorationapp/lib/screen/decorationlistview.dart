@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:homedecorationapp/model/datalist.dart';
 import 'package:homedecorationapp/screen/addcartpaid.dart';
@@ -25,74 +24,6 @@ class _DEcorationViewState extends State<DEcorationView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 260,
-              child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => Stack(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 30, left: 10, right: 20, bottom: 10),
-                            width: 320,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                decoration[index].image,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                              top: 30,
-                              left: 15,
-                              child: IconButton(
-                                  onPressed: (() {
-                                    Navigator.of(context).pop();
-                                  }),
-                                  icon: Icon(
-                                    Icons.arrow_back_ios,
-                                    size: 25,
-                                    color: Colors.white,
-                                  ))),
-                        ],
-                      ),
-                  separatorBuilder: (_, index) => SizedBox(width: 5),
-                  itemCount: decoration.length),
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
-              height: 120,
-              child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (contex, index) => Container(
-                        width: 250,
-                        color: Colors.white,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              decoration[index].name,
-                              style: GoogleFonts.roboto(
-                                  fontSize: 20, color: Colors.black),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              decoration[index].price,
-                              style: GoogleFonts.roboto(
-                                  fontSize: 18, color: Colors.green),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-                      ),
-                  separatorBuilder: (_, index) => SizedBox(width: 100),
-                  itemCount: decoration.length),
-            ),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 10),
               child: Text(
@@ -155,6 +86,9 @@ class _DEcorationViewState extends State<DEcorationView> {
                       ),
                   itemCount: decoration.length),
             ),
+            SizedBox(
+              height: 40,
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 40, left: 20),
               child: MaterialButton(
@@ -162,7 +96,7 @@ class _DEcorationViewState extends State<DEcorationView> {
                     borderRadius: BorderRadius.circular(20)),
                 color: Colors.grey,
                 height: 50,
-                minWidth: 300,
+                minWidth: 360,
                 onPressed: (() {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => AddCARDPaid()));

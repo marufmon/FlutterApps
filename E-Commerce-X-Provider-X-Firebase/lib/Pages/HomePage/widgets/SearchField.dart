@@ -29,7 +29,7 @@ class SearchField extends StatelessWidget {
           contentPadding: const EdgeInsets.only(left: 20, top: 12),
           focusColor: const Color(0xff38304C),
           suffixIcon: const Icon(
-            Icons.camera_alt_outlined,
+            Icons.search,
             color: Colors.white,
           ),
           disabledBorder: InputBorder.none,

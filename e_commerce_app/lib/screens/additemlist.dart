@@ -135,7 +135,6 @@ class _AddItemState extends State<AddItem> {
                       height: 10,
                     ),
                     Stack(
-                      //overflow: Overflow.visible,
                       children: [
                         Container(
                           height: 150,

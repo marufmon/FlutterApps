@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Text("${weatherMap!["main"]["temp"]}°",
                               style: GoogleFonts.roboto(
-                                  fontSize: 55,
+                                  fontSize: 50,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white)),
                         ],
@@ -140,12 +140,12 @@ class _HomePageState extends State<HomePage> {
                           Text(
                               "Feels Like ${weatherMap!["main"]["feels_like"]}°",
                               style: GoogleFonts.roboto(
-                                  fontSize: 22,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white)),
                           Text("${weatherMap!["weather"][0]["description"]}",
                               style: GoogleFonts.roboto(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white))
                         ],
@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                           Text(
                               "Humidity ${weatherMap!["main"]["humidity"]},Pressure ${weatherMap!["main"]["pressure"]}",
                               style: GoogleFonts.roboto(
-                                  fontSize: 22,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white)),
                           SizedBox(
@@ -170,14 +170,14 @@ class _HomePageState extends State<HomePage> {
                           Text(
                               "Sunrise- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunrise"])).format("h:mm,a")},Sunset- ${Jiffy(DateTime.fromMicrosecondsSinceEpoch(weatherMap!["sys"]["sunset"])).format("h:mm,a")}",
                               style: GoogleFonts.roboto(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white)),
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 50,
                     ),
                     SizedBox(
                       height: 200,
@@ -198,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                                       Text(
                                           "${Jiffy(forecastMap!["list"][index]["dt_txt"]).format("EEE  h:mm")}",
                                           style: GoogleFonts.roboto(
-                                              fontSize: 20,
+                                              fontSize: 18,
                                               fontWeight: FontWeight.w500,
                                               color: Colors.white)),
                                       Image.network(
@@ -206,13 +206,13 @@ class _HomePageState extends State<HomePage> {
                                       Text(
                                           "${forecastMap!["list"][index]["main"]["temp_min"]}°/${forecastMap!["list"][index]["main"]["temp_max"]}°",
                                           style: GoogleFonts.roboto(
-                                              fontSize: 18,
+                                              fontSize: 16,
                                               fontWeight: FontWeight.w400,
                                               color: Colors.white)),
                                       Text(
                                           "${forecastMap!["list"][index]["weather"][0]["description"]}",
                                           style: GoogleFonts.roboto(
-                                              fontSize: 18,
+                                              fontSize: 16,
                                               fontWeight: FontWeight.w500,
                                               color: Colors.white)),
                                     ],

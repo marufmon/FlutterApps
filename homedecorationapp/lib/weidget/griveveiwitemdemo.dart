@@ -39,7 +39,8 @@ class _GRiveItemState extends State<GRiveItem> {
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => DEcorationView()));
+                        builder: (context) => DEcorationView(),
+                      ));
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
