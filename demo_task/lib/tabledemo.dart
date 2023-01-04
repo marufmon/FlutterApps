@@ -38,7 +38,7 @@ class BodyTable extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 16, vertical: 5),
                         child: Text(
                           "Dues",
-                          style: buildTS(20, Colors.white),
+                          style: buildTS(18, Colors.white),
                         ),
                       ),
                       Container(
@@ -102,7 +102,7 @@ class BodyTable extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: Text(
                           "Purchase",
-                          style: buildTS(20, Colors.white),
+                          style: buildTS(18, Colors.white),
                         ),
                       ),
                       Container(
@@ -218,7 +218,7 @@ class BodyTable extends StatelessWidget {
                   )),
               Container(
                 width: 78,
-                height: 510,
+                height: 508,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -253,8 +253,8 @@ class BodyTable extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: Text(
-                          "Return",
-                          style: buildTS(20, Colors.white),
+                          "Payment",
+                          style: buildTS(18, Colors.white),
                         ),
                       ),
                       Container(
@@ -262,58 +262,14 @@ class BodyTable extends StatelessWidget {
                               border: Border.all(color: Color(0xff10AB83))),
                           padding:
                               EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-                          height: 68,
+                          height: 70,
                           child: Column(
                             children: [
                               textInHorizotal(
                                   "Invoice Date : ", "01 January 2022"),
-                              textInHorizotal("Invoice No. : ", "5386328"),
+                              textInHorizotal("Invoice No : ", "5386328"),
                             ],
                           )),
-                      Container(
-                        height: 164,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xff10AB83))),
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 2,
-                                child: Container(
-                                  margin: EdgeInsets.all(16),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                    ],
-                                  ),
-                                )),
-                            customDivider(),
-                            Expanded(
-                                child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text("৳ 40000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                                Text("৳ 6000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                                Text("৳ 4000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                              ],
-                            )),
-                          ],
-                        ),
-                      ),
                       buildTowItemData(
                           firstItemName: "Discount",
                           firstItemPrice: '0',
@@ -321,14 +277,14 @@ class BodyTable extends StatelessWidget {
                           secoundItemPrice: '0'),
                       buildTowItemData(
                           firstItemName: "Grand Total",
-                          firstItemPrice: '50000',
+                          firstItemPrice: '0',
                           secoundItemName: "Previous Due",
-                          secoundItemPrice: '20000'),
+                          secoundItemPrice: '30000'),
                       buildTowItemData(
                           firstItemName: "Total Amount",
-                          firstItemPrice: '70000',
+                          firstItemPrice: '30000',
                           secoundItemName: "Total Payment",
-                          secoundItemPrice: '40000'),
+                          secoundItemPrice: '10000'),
                       Container(
                         height: 46,
                         decoration: BoxDecoration(
@@ -358,7 +314,7 @@ class BodyTable extends StatelessWidget {
                                 child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text("৳ 30000",
+                                Text("৳ 20000",
                                     style: buildTS(12, Colors.black,
                                         FontWeight.w500, "Poppins")),
                               ],
@@ -370,7 +326,7 @@ class BodyTable extends StatelessWidget {
                   )),
               Container(
                 width: 78,
-                height: 510,
+                height: 346,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -405,8 +361,8 @@ class BodyTable extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: Text(
-                          "Payment",
-                          style: buildTS(20, Colors.white),
+                          "Return",
+                          style: buildTS(18, Colors.white),
                         ),
                       ),
                       Container(
@@ -418,12 +374,27 @@ class BodyTable extends StatelessWidget {
                           child: Column(
                             children: [
                               textInHorizotal(
-                                  "Invoice Date : ", "01 January 2022"),
-                              textInHorizotal("Invoice No. : ", "5386328"),
+                                  "Invoice Date :", "01 January 2022"),
+                              textInHorizotal("Invoice No : ", "5386328"),
                             ],
                           )),
                       Container(
-                        height: 164,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Color(0xff10AB83))),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                          height: 68,
+                          child: Column(
+                            children: [
+                              textInHorizotal(
+                                  "Return Date : ", "01 January 2022"),
+                              textInHorizotal("Return No : ", "5386328"),
+                            ],
+                          )
+                          // color: Colors.blueGrey,
+                          ),
+                      Container(
+                        height: 80,
                         decoration: BoxDecoration(
                             border: Border.all(color: Color(0xff10AB83))),
                         child: Row(
@@ -439,11 +410,7 @@ class BodyTable extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
+                                          "100 pcs x 50", "Test product 01"),
                                     ],
                                   ),
                                 )),
@@ -452,13 +419,7 @@ class BodyTable extends StatelessWidget {
                                 child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text("৳ 40000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                                Text("৳ 6000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                                Text("৳ 4000",
+                                Text("৳ 5000",
                                     style: buildTS(12, Colors.black,
                                         FontWeight.w500, "Poppins")),
                               ],
@@ -473,14 +434,14 @@ class BodyTable extends StatelessWidget {
                           secoundItemPrice: '0'),
                       buildTowItemData(
                           firstItemName: "Grand Total",
-                          firstItemPrice: '50000',
+                          firstItemPrice: '5000',
                           secoundItemName: "Previous Due",
                           secoundItemPrice: '20000'),
                       buildTowItemData(
                           firstItemName: "Total Amount",
-                          firstItemPrice: '70000',
-                          secoundItemName: "Total Payment",
-                          secoundItemPrice: '40000'),
+                          firstItemPrice: '15000',
+                          secoundItemName: "Total Paid",
+                          secoundItemPrice: '0'),
                       Container(
                         height: 46,
                         decoration: BoxDecoration(
@@ -510,7 +471,7 @@ class BodyTable extends StatelessWidget {
                                 child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text("৳ 30000",
+                                Text("৳ 15000",
                                     style: buildTS(12, Colors.black,
                                         FontWeight.w500, "Poppins")),
                               ],
@@ -522,7 +483,7 @@ class BodyTable extends StatelessWidget {
                   )),
               Container(
                 width: 78,
-                height: 510,
+                height: 492,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
