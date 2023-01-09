@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:foodcourt/model/produt.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:homedecorationapp/model/datalist.dart';
 
 class AddCARDPaid extends StatefulWidget {
   const AddCARDPaid({super.key});
@@ -33,6 +33,7 @@ class _AddCARDPaidState extends State<AddCARDPaid> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -40,44 +41,23 @@ class _AddCARDPaidState extends State<AddCARDPaid> {
               padding: EdgeInsets.only(top: 30),
               child: Column(
                 children: [
-                  ListTile(
-                      leading: IconButton(
-                          onPressed: (() {
-                            Navigator.of(context).pop();
-                          }),
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            size: 20,
-                            color: Colors.black38,
-                          )),
-                      title: Text(
-                        "My card",
-                        style: GoogleFonts.roboto(
-                            fontSize: 20, color: Colors.black),
-                      ),
-                      trailing: IconButton(
-                        onPressed: (() {}),
-                        icon: Icon(
-                          Icons.paid,
-                          size: 20,
-                          color: Colors.black38,
-                        ),
-                      )),
                   Container(
                     margin: EdgeInsets.only(top: 15, left: 25, right: 25),
-                    height: 650,
+                    height: 800,
                     child: ListView.separated(
                         physics: NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.vertical,
                         itemBuilder: (contex, index) => Container(
-                              height: 150,
-                              color: Colors.white,
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 24, 23, 23),
+                                  borderRadius: BorderRadius.circular(15)),
+                              height: 120,
                               child: Row(
                                 children: [
                                   Expanded(
                                     flex: 3,
                                     child: Container(
-                                      height: 150,
+                                      height: 115,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
                                         child: Image.asset(
@@ -98,43 +78,39 @@ class _AddCARDPaidState extends State<AddCARDPaid> {
                                           Text(
                                             decoration[index].name,
                                             style: GoogleFonts.roboto(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w700),
-                                          ),
-                                          SizedBox(
-                                            height: 5,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white),
                                           ),
                                           Text(
-                                            "size: M",
+                                            "size:M",
                                             style: GoogleFonts.roboto(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w700),
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white),
                                           ),
                                           Row(
                                             children: [
                                               Text(
                                                 "\$ ",
                                                 style: GoogleFonts.roboto(
-                                                    fontSize: 18,
+                                                    fontSize: 16,
                                                     color: Colors.green),
                                               ),
                                               Text(
                                                 "${decoration[index].totalPrice} ",
                                                 style: GoogleFonts.roboto(
-                                                    fontSize: 18,
+                                                    fontSize: 16,
                                                     color: Colors.green),
                                               ),
                                             ],
-                                          ),
-                                          SizedBox(
-                                            height: 15,
                                           ),
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
                                               MaterialButton(
-                                                color: Colors.grey,
+                                                color: Colors.white,
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -169,19 +145,19 @@ class _AddCARDPaidState extends State<AddCARDPaid> {
                                                 ),
                                               ),
                                               SizedBox(
-                                                width: 15,
+                                                width: 10,
                                               ),
                                               Text(
                                                 "${decoration[index].quantity}",
                                                 style: GoogleFonts.roboto(
                                                     fontSize: 16,
-                                                    color: Colors.black),
+                                                    color: Colors.white),
                                               ),
                                               SizedBox(
                                                 width: 15,
                                               ),
                                               MaterialButton(
-                                                color: Colors.grey,
+                                                color: Colors.white,
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -229,24 +205,44 @@ class _AddCARDPaidState extends State<AddCARDPaid> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: Colors.grey),
+                        color: Color.fromARGB(255, 15, 15, 15)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(30.0),
-                          child: Text(
-                            "Delivery prices.........\$ 5",
-                            style: GoogleFonts.lobster(
-                                fontSize: 20, color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Delivery prices",
+                                style: GoogleFonts.lobster(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                              Text(
+                                "\$ 5",
+                                style: GoogleFonts.lobster(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ],
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(30.0),
-                          child: Text(
-                            "Total price.........\$ $totalCost",
-                            style: GoogleFonts.lobster(
-                                fontSize: 20, color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Total price",
+                                style: GoogleFonts.lobster(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                              Text(
+                                "\$ $totalCost",
+                                style: GoogleFonts.lobster(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ],
                           ),
                         ),
                         Center(
@@ -271,7 +267,7 @@ class _AddCARDPaidState extends State<AddCARDPaid> {
                                             GoogleFonts.lobster(fontSize: 20),
                                       ),
                                       Text(
-                                        'Thank you buying\n my online home \n Decoraton items',
+                                        'Thank you buying\nmy online\n product',
                                         style:
                                             GoogleFonts.lobster(fontSize: 16),
                                       ),

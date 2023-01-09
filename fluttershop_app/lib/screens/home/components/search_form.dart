@@ -9,11 +9,19 @@ const OutlineInputBorder outlineInputBorder = OutlineInputBorder(
   borderSide: BorderSide.none,
 );
 
-class SearchForm extends StatelessWidget {
+class SearchForm extends StatefulWidget {
+
+
+  
   const SearchForm({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<SearchForm> createState() => _SearchFormState();
+}
+
+class _SearchFormState extends State<SearchForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
